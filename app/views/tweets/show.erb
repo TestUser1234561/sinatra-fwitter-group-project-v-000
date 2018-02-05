@@ -1,0 +1,9 @@
+<% if @user.id == @tweet.user_id %>
+    <a href="/tweets/<%= @tweet.id %>/edit">Edit</a>
+    <form method="post" action="/tweets/<%= @tweet.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" name="submit" value="Delete">
+    </form>
+<% end %>
+
+<p><%= @tweet.content %></p>
